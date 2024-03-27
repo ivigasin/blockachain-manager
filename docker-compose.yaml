@@ -1,0 +1,24 @@
+services:
+  block-processor:
+    hostname: block-processor
+    build:
+      context: .
+      dockerfile: ./apps/block-processor/Dockerfile
+      target: development
+    command: pnpm run start:dev block-processor    
+    ports:
+      - '9001:9001'
+    volumes:
+      - .:/usr/src/app
+
+  blockchain:
+    hostname: blockchain
+    build:
+      context: .
+      dockerfile: ./apps/blockchain/Dockerfile
+      target: development
+    command: pnpm run start:dev blockchain    
+    ports:
+      - '9999:9999'
+    volumes:
+      - .:/usr/src/app

@@ -1,0 +1,39 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/blockchain/src",
+  "monorepo": true,
+  "root": "apps/blockchain",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/blockchain/tsconfig.app.json"
+  },
+  "projects": {   
+    "block-processor": {
+      "type": "application",
+      "root": "apps/block-processor",
+      "entryFile": "main",
+      "sourceRoot": "apps/block-processor/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/block-processor/tsconfig.app.json"
+      }
+    },
+    "common": {
+      "type": "library",
+      "root": "libs/common",
+      "entryFile": "index",
+      "sourceRoot": "libs/common/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/common/tsconfig.lib.json"
+      }
+    },
+    "blockchain": {
+      "type": "application",
+      "root": "apps/blockchain",
+      "entryFile": "main",
+      "sourceRoot": "apps/blockchain/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/blockchain/tsconfig.app.json"
+      }
+    }
+  }
+}
